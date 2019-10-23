@@ -1,6 +1,6 @@
 
 
-select    date(timestamp_seconds(cast(created_at as int64))) as datekey, count(*) as cnt
+select    date(timestamp_seconds(cast(created_at as int64))) as datekey, count(*) as cnt_2
 from      public.adjust_conversion
 FOR SYSTEM TIME AS OF TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 2 day)
 where    timestamp_seconds(cast(created_at as int64)) >= '2019-08-01' and timestamp_seconds(cast(created_at as int64)) < timestamp_add('2019-10-21', interval 1 day)

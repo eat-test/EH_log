@@ -1,13 +1,3 @@
-select *
-from public.common_iap
-where nid ='1571753957531022916'
-order by _i_t
-
-select min(_i_t), max(_i_t)
-from public.common_adid
-where _i_t >= timestamp('2019-10-01') and _i_t < timestamp_add('2019-10-01', interval 1 day)
-
-
 
 
 select    date(timestamp_seconds(cast(created_at as int64))) as datekey, count(*) as cnt
